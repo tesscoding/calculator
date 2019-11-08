@@ -21,7 +21,7 @@ body{
 	border:5px 5px black;
 	height:72vh;
 	/**width:50vh;**/
-	border:5px solid black;
+	border:5px solid #1e1f21;
 	background-color: #2b2d2f;
 	padding:10px;
 
@@ -45,8 +45,8 @@ button:hover{
 }
 .screen{
 	grid-column:1/-1;
-	background-color: #333333;
-	color:#FEFEFA;
+	background-color: #f0f0f0;
+	color:#1e1f21;
 	align-content:right;
 	display:flex;
 	flex-direction:column;
@@ -65,12 +65,12 @@ button.c{
 	display:flex;
 	align-items:center;
 	justify-content: center;
-	color:red;
+	color:#900603;
 	text-transform:uppercase;
 
 }
 button.equals{
-	color:green;
+	color:#03ac13;
 }
 .secret-button{
 	visibility:hidden;

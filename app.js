@@ -3,22 +3,34 @@
 //make event listeners for all the keys
 var keys=document.querySelectorAll("button");
 keys.forEach(key=>key.addEventListener("click", (e)=>press(e)));//add event listeners
+	var operand2="";
+	var operator="";
+	var operand1="";
 					
 function press(e){
 	var input=document.querySelector(".bottom-screen");
 	var previous=document.querySelector(".top-screen");
 	var key=e.target.textContent;
+
 	if(key!="x"&&key!="/"&&key!="-"&&key!="+"&&key!="="&&key!="c"){
 		input.textContent+=key;
-	} else if(key!="="&&key!="c") {
-		previous.textContent=input.textContent+key;
+	} else if(key!="="&&key!="c") { 
+	    operand1=input.textContent;                   
+		previous.textContent=input.textContent+key; //if key is an operator, move number from bottom to top of screen
 		input.textContent="";
+		operator=key;
+		
 	} else if(key=="c"){
 		previous.textContent="";
 		input.textContent="";
+	} else if(key=="="){                          //set the two operands and call operate();
+		
+		 operand2=input.textContent;
+		 previous.textContent=operand1+" " +operator+ " " + operand2 + " =";
+		 input.textContent=operate(operator,parseFloat(operand1),parseFloat(operand2));
 	}
-	console.log(e.target.textContent)
-	console.log(parseFloat(input.textContent));
+	//console.log(`operator: ${operator}, operand1: ${operand1}, operand 2: ${operand2}`);
+
 	
 }
 
