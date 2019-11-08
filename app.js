@@ -65,7 +65,10 @@ function minus(a, b){
 }
 
 function divide(a,b){
-	return a/b;
+	if(b==0){
+		return "Not a number"
+	}
+	return Math.round((10**12)*a/b)/(10**12);
 
 }
 function multiply(a,b){
