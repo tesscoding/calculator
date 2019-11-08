@@ -2,9 +2,25 @@
 
 //make event listeners for all the keys
 var keys=document.querySelectorAll("button");
-keys.forEach(key=>key.addEventListener("click", (e)=>console.log(e)));//add event listeners
+keys.forEach(key=>key.addEventListener("click", (e)=>press(e)));//add event listeners
 					
-
+function press(e){
+	var input=document.querySelector(".bottom-screen");
+	var previous=document.querySelector(".top-screen");
+	var key=e.target.textContent;
+	if(key!="x"&&key!="/"&&key!="-"&&key!="+"&&key!="="&&key!="c"){
+		input.textContent+=key;
+	} else if(key!="="&&key!="c") {
+		previous.textContent=input.textContent+key;
+		input.textContent="";
+	} else if(key=="c"){
+		previous.textContent="";
+		input.textContent="";
+	}
+	console.log(e.target.textContent)
+	console.log(parseFloat(input.textContent));
+	
+}
 
 
 
