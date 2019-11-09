@@ -24,8 +24,13 @@ function press(e){
 		previous.textContent="";
 		input.textContent="";
 	} else if(key=="="){                          //set the two operands and call operate();
-		
+			//console.log(`operator: ${operator}, operand1: ${operand1}, operand 2: ${operand2}`)
 		 operand2=input.textContent;
+		
+		 if(operator==""){
+		 	previous.textContent=input.textContent;
+		 	return;
+		 }
 		 previous.textContent=operand1+" " +operator+ " " + operand2 + " =";
 		 input.textContent=operate(operator,parseFloat(operand1),parseFloat(operand2));
 	}
@@ -51,7 +56,7 @@ function operate(operator, operand1, operand2){
 	if(operator=="/"){
 		result=divide(operand1, operand2);
 	}
-	if(operator=="*"){
+	if(operator=="x"){
 		result=multiply(operand1, operand2);
 	}
 	return result;

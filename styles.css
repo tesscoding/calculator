@@ -3,11 +3,14 @@
 	padding:0;
 }
 body{
-	background-image:linear-gradient(#5D001E, #9A1750);
+	background-color:#9A1750;
+	background-image:linear-gradient(to top right,#5D001E, transparent); /**reduce gradient banding by going to transparent and laying target colour underneath**/
 	min-height:100vh;
 		display:grid;
 	justify-content:center;
 	align-content:center;
+	font-weight:bolder;
+	font-family:sans-serif;
 
 }
 
@@ -17,11 +20,10 @@ body{
 	align-content:center;
 	grid-template-columns: repeat(4,60px);
 	grid-template-rows: minmax(120px auto) repeat(5, 200px);
-	
-	border:5px 5px black;
 	height:72vh;
 	/**width:50vh;**/
 	border:5px solid #1e1f21;
+	border-radius:3px;
 	background-color: #2b2d2f;
 	padding:10px;
 
@@ -29,15 +31,17 @@ body{
 
 button{
 	outline:none;
-	border:1px solid #FEFEFA;
+	border:none;
 	cursor:pointer;
 	font-size:2rem;
-	background-color:#AAB1AB;
-	font-family:sans-serifS;
+	background-color:#f0f0f0;
+	font-weight:bolder;
 	margin:4px 2px;
 	border-radius:3px;
 	height:50px;
 	width:50px;
+	color:#1e1f21;
+
 }
 button:hover{
 	background-color:white;
@@ -56,7 +60,9 @@ button:hover{
 	margin:10px 0px 10px 0px;
 	height:80px;
 	font-size:2rem;
+	border-radius:3px;
 }
+
 .top-screen{
 	font-size:1.7rem;
 }
@@ -65,12 +71,14 @@ button.c{
 	display:flex;
 	align-items:center;
 	justify-content: center;
-	color:#900603;
+	background-color:#ff4040;
+	color:#f0f0f0;
 	text-transform:uppercase;
 
 }
 button.equals{
-	color:#03ac13;
+	background-color:#f0f0f0;
+	color:#1e1f21;
 }
 .secret-button{
 	visibility:hidden;
